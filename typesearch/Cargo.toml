@@ -1,0 +1,25 @@
+[package]
+name = "typesearch"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+keywords.workspace = true
+categories.workspace = true
+description = "Type-safe schema and query builder for OpenSearch, Elasticsearch, and Tantivy"
+readme = "../README.md"
+
+[dependencies]
+typesearch-derive = { version = "0.1.0", path = "../typesearch-derive" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+[dev-dependencies]
+tokio = { version = "1.0", features = ["full"] }
+
+[features]
+default = []
+opensearch-backend = ["opensearch"]
+elasticsearch-backend = ["elasticsearch"]
+tantivy-backend = ["tantivy"]
