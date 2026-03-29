@@ -1,7 +1,7 @@
 //! Attribute parsing for derive macros
 
 use darling::{FromDeriveInput, FromField};
-use syn::{Ident, Type};
+use syn::Ident;
 
 /// Container attributes: #[index(...)]
 #[derive(Debug, FromDeriveInput)]
@@ -16,10 +16,12 @@ pub struct IndexArgs {
 
     /// Number of shards
     #[darling(default)]
+    #[allow(dead_code)] // impl later
     pub shards: Option<u32>,
 
     /// Number of replicas
     #[darling(default)]
+    #[allow(dead_code)] // impl later
     pub replicas: Option<u32>,
 }
 
