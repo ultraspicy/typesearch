@@ -33,12 +33,12 @@ pub fn expand_derive_index(input: &DeriveInput) -> Result<TokenStream> {
     let struct_name = &args.ident;
     let index_name = args
         .name
-        .unwrap_or_else(|| to_snake_case(&struct_name.to_string()));
+        .unwrap_or_else(|| to_snake_case(&struct_name.to_string())); // index name default to struct name if not provided
 
     // Extract fields
     let fields = args.data.take_struct().ok_or_else(|| {
         syn::Error::new_spanned(input, "Index can only be derived for structs")
-    })?;
+    })?.fields;
 
     // Generate field metadata
     let field_metadata = generate_field_metadata(&fields)?;
@@ -53,7 +53,7 @@ pub fn expand_derive_index(input: &DeriveInput) -> Result<TokenStream> {
                 #index_name
             }
 
-            fn mapping() -> typesearch::JsonValue {
+            fn mapping() -> ::serde_json::Value {
                 #mapping_json
             }
 

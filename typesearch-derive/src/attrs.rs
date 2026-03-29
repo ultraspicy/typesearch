@@ -28,7 +28,6 @@ pub struct IndexArgs {
 #[darling(attributes(field))]
 pub struct FieldArgs {
     pub ident: Option<Ident>,
-    pub ty: Type,
 
     // Field types (mutually exclusive)
     #[darling(default)]

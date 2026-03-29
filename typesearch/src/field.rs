@@ -77,7 +77,6 @@ pub struct FieldMetadata {
 }
 
 impl FieldMetadata {
-    /// Create new field metadata
     pub const fn new(name: &'static str, field_type: FieldType) -> Self {
         Self {
             name,
@@ -95,13 +94,11 @@ impl FieldMetadata {
         }
     }
 
-    /// Set stored option
     pub const fn stored(mut self, value: bool) -> Self {
         self.options.stored = value;
         self
     }
 
-    /// Set sortable option
     pub const fn sortable(mut self, value: bool) -> Self {
         self.options.sortable = value;
         self

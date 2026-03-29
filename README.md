@@ -8,10 +8,10 @@ Type-safe schema and query builder for OpenSearch, Elasticsearch, and Tantivy.
 
 ## Features
 
-- 🦀 **Type-safe queries** - Compile-time validation of field names and types
-- 📝 **Derive macros** - Generate schemas from Rust structs
-- 🔌 **Multi-backend** - Works with OpenSearch, Elasticsearch, and Tantivy
-- ⚡ **Zero-cost** - No runtime overhead, all validation at compile time
+- **Type-safe queries** - Compile-time validation of field names and types
+- **Derive macros** - Generate schemas from Rust structs
+- **Multi-backend** - Works with OpenSearch
+- **Zero-cost** - No runtime overhead, all validation at compile time
 
 ## Quick Start
 
@@ -143,11 +143,9 @@ struct MyDoc { ... }
 - [x] Basic derive macro for schema generation
 - [x] Field types (text, keyword, numeric, date, geo, boolean)
 - [x] Field options (stored, sortable, prefix, case_insensitive)
-- [ ] Type-safe query builder
-- [ ] Tantivy backend support
 - [ ] Nested object support
-- [ ] Schema migration tools
-- [ ] Compile-time query validation
+- [ ] Index Bootstrap support (Mysql, Hive)
+- [ ] LiveIgestion support (Kafka + Flink)
 
 ## Examples
 

@@ -1,8 +1,7 @@
-//! Query builder types (placeholder for future implementation)
+//! Query builder types
 
 use serde_json::Value;
 
-/// Query builder (to be implemented)
 pub struct QueryBuilder {
     _query: Value,
 }
